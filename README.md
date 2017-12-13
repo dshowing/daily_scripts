@@ -1,2 +1,2 @@
 # Shell
-shell script
+daily shell script
