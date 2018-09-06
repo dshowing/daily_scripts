@@ -4,7 +4,7 @@
 
 # exist or not
 command -v cython >> /dev/null
-if [ $? -eq 1 ]; then
+if [ $? -ne 0 ]; then
   /usr/bin/apt-get install -y cython
 fi
 
@@ -27,7 +27,7 @@ jump(){
 
 # run encryption
 encryption(){
-    is_py=`ls -l | grep *.py | grep -v __init | wc -l`
+    is_py=`ls -l | grep .py$ | grep -v __init | wc -l`
     if [ $is_py -ne 0 ]; then
       for file in `ls -l *.py | grep -v __init | awk '{print $9}'`
       do
