@@ -70,10 +70,10 @@ function get_tags(){
 
         for tag in `cat ${tags_file}`; do
             curl -X 'DELETE' \
-              "https://harbor.k8s.aixuexi.com/api/v2.0/projects/${pr}/repositories/${re}/artifacts/${tag}" \
+              "https://harbor.xxxx.com/api/v2.0/projects/${pr}/repositories/${re}/artifacts/${tag}" \
               -H 'accept: application/json' \
               -H "authorization: Basic ${harbor_token}"
-            echo "`date '+%Y-%m-%d %H:%M:%S'`    delete tag: harbor.k8s.aixuexi.com/${pr}/${re}:${tag}" >> /tmp/clean_harbor_image.log
+            echo "`date '+%Y-%m-%d %H:%M:%S'`    delete tag: harbor.xxxx.com/${pr}/${re}:${tag}" >> /tmp/clean_harbor_image.log
         done
 
         echo "pr=$pr; re=$re"
